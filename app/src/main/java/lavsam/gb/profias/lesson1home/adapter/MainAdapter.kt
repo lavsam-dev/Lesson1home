@@ -3,7 +3,7 @@ package lavsam.gb.profias.lesson1home.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import lavsam.gb.profias.lesson1home.databinding.ActivityMainRecyclerviewItemBinding
+import lavsam.gb.profias.lesson1home.databinding.TranslationRecyclerviewItemBinding
 import lavsam.gb.profias.lesson1home.model.data.Vocabulary
 
 class MainAdapter (
@@ -17,7 +17,7 @@ class MainAdapter (
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(ActivityMainRecyclerviewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return ViewHolder(TranslationRecyclerviewItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -26,7 +26,7 @@ class MainAdapter (
 
     override fun getItemCount(): Int = data.size
 
-    inner class ViewHolder(val binding: ActivityMainRecyclerviewItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: TranslationRecyclerviewItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Vocabulary) {
             if (layoutPosition != RecyclerView.NO_POSITION) {
                 binding.headerTextviewRecyclerItem.text = data.text
