@@ -1,4 +1,4 @@
-package lavsam.gb.profias.lesson1home.adapter
+package lavsam.gb.profias.lesson1home.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

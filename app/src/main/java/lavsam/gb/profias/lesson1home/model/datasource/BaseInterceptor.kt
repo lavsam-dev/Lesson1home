@@ -1,4 +1,4 @@
-package lavsam.gb.profias.lesson1home.model.retrofit
+package lavsam.gb.profias.lesson1home.model.datasource
 
 import okhttp3.Interceptor
 import okhttp3.Response

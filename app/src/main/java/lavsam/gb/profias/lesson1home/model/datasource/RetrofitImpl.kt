@@ -1,8 +1,7 @@
-package lavsam.gb.profias.lesson1home.model.retrofit
+package lavsam.gb.profias.lesson1home.model.datasource
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import io.reactivex.Observable
-import lavsam.gb.profias.lesson1home.Contract
 import lavsam.gb.profias.lesson1home.model.data.Vocabulary
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -10,7 +9,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class RetrofitImpl: Contract.DataSource<List<Vocabulary>> {
+class RetrofitImpl: DataSource<List<Vocabulary>> {
     override fun getData(word: String): Observable<List<Vocabulary>> {
         return getService(BaseInterceptor.interceptor).search(word)
     }

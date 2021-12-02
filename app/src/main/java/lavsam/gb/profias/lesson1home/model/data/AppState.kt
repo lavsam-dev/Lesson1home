@@ -1,6 +1,4 @@
-package lavsam.gb.profias.lesson1home.model
-
-import lavsam.gb.profias.lesson1home.model.data.Vocabulary
+package lavsam.gb.profias.lesson1home.model.data
 
 sealed class AppState {
     data class Success(val data: List<Vocabulary>?) : AppState()

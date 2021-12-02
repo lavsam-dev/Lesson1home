@@ -1,22 +1,22 @@
-package lavsam.gb.profias.lesson1home.presenters
+package lavsam.gb.profias.lesson1home.main
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableObserver
-import lavsam.gb.profias.lesson1home.Contract
-import lavsam.gb.profias.lesson1home.MainInteractor
-import lavsam.gb.profias.lesson1home.model.AppState
+import lavsam.gb.profias.lesson1home.main.view.ViewFragment
+import lavsam.gb.profias.lesson1home.model.data.AppState
 import lavsam.gb.profias.lesson1home.model.repository.DataSourceLocal
 import lavsam.gb.profias.lesson1home.model.repository.DataSourceRemote
 import lavsam.gb.profias.lesson1home.model.repository.RepositoryImpl
+import lavsam.gb.profias.lesson1home.presenters.Presenter
 import lavsam.gb.profias.lesson1home.rx.SchedulerProvider
 
-class MainPresenterImpl<T : AppState, V : Contract.View>(
+class MainPresenterImpl<T : AppState, V : ViewFragment>(
     private val interactor: MainInteractor = MainInteractor(
         RepositoryImpl(DataSourceRemote()),
         RepositoryImpl(DataSourceLocal())),
     protected val compositeDisposable: CompositeDisposable = CompositeDisposable(),
     protected val schedulerProvider: SchedulerProvider = SchedulerProvider()
-) : Contract.Presenter<T, V> {
+) : Presenter<T, V> {
     private var currentView: V? = null
 
     override fun attachView(view: V) {

@@ -6,13 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import lavsam.gb.profias.lesson1home.Contract
 import lavsam.gb.profias.lesson1home.R
-import lavsam.gb.profias.lesson1home.adapter.MainAdapter
+import lavsam.gb.profias.lesson1home.main.adapter.MainAdapter
 import lavsam.gb.profias.lesson1home.databinding.FragmentMainBinding
-import lavsam.gb.profias.lesson1home.model.AppState
+import lavsam.gb.profias.lesson1home.model.data.AppState
 import lavsam.gb.profias.lesson1home.model.data.Vocabulary
-import lavsam.gb.profias.lesson1home.presenters.MainPresenterImpl
+import lavsam.gb.profias.lesson1home.main.MainPresenterImpl
+import lavsam.gb.profias.lesson1home.main.view.ViewFragment
+import lavsam.gb.profias.lesson1home.presenters.Presenter
 
 class MainFragment : BaseFragment<AppState>() {
 
@@ -27,7 +28,7 @@ class MainFragment : BaseFragment<AppState>() {
             }
         }
 
-    override fun createPresenter(): Contract.Presenter<AppState, Contract.View> {
+    override fun createPresenter(): Presenter<AppState, ViewFragment> {
         return MainPresenterImpl()
     }
 

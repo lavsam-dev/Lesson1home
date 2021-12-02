@@ -1,4 +1,4 @@
-package lavsam.gb.profias.lesson1home.model.retrofit
+package lavsam.gb.profias.lesson1home.model.datasource
 
 import io.reactivex.Observable
 import lavsam.gb.profias.lesson1home.model.data.Vocabulary
